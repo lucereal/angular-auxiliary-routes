@@ -4,10 +4,11 @@ import {OneComponent } from './one/one.component';
 import {TwoComponent } from './two/two.component';
 
 import { CommonModule } from '@angular/common';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'one', pathMatch: 'full' },
-
+  //{ path: '', redirectTo: 'one', pathMatch: 'full' },
+  //{ path: '', redirectTo: 'two', pathMatch: 'full', outlet: 'secondary' },
 
   {
     path: 'one', component: OneComponent
