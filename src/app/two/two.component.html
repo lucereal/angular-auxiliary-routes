@@ -1,5 +1,9 @@
+<div style="border: 2px solid blue; padding: 1rem;">
 <p>
   Component two
 </p>
 <p>{{name}}</p>
+<button><a [routerLink]="['',{ outlets: { 'third': ['three','angular','four'] } }]">component four in three</a></button>
+<button><a [routerLink]="['',{ outlets: { 'third': ['three','angular'] } }]">delete four in three</a></button>
 
+</div>

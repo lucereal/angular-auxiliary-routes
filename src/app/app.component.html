@@ -3,18 +3,28 @@
 	<button><a [routerLink]="['one']">None on primary</a></button>
     <button><a [routerLink]="['one','fish']">fish on primary</a></button>
     <button><a [routerLink]="['one','dog']">dog on primary</a></button>
+
     <button><a [routerLink]="[{ outlets: { 'secondary': ['two'] } }]">none on secondary</a></button>
     <button><a [routerLink]="[{ outlets: { 'secondary': ['two','name'] } }]">name on secondary</a></button>
     <button><a [routerLink]="[{ outlets: { 'secondary': ['two',name] } }]">foo on secondary</a></button>
-    <button><a [routerLink]="[{ outlets: { 'primary': ['one','hello'],'secondary': ['two','bye'] } }]">hello on primary, bye on secondary</a></button>
-    <button><a [routerLink]="[{ outlets: { 'primary': ['one'],'secondary': ['two'] } }]">nothing on both</a></button>
+    
+    <button><a [routerLink]="[{ outlets: { 'third': ['three',name] } }]">foo on third</a></button>
+    <button><a [routerLink]="[{ outlets: { 'third': ['three','angular'] } }]">angular on third</a></button>
+   
+    <button><a [routerLink]="[{ outlets: { 'third': null } }]">Delete third</a></button>
+
+    <button><a [routerLink]="[{ outlets: { 'primary': ['one','hello'],'secondary': ['two','bye'],'third':['three','later'] } }]">hello on primary, bye on secondary, later on third</a></button>
+    <button><a [routerLink]="[{ outlets: { 'primary': ['one'],'secondary': ['two'], 'third':['three'] } }]">nothing on all</a></button>
 
 </nav>
-<p>Pay attention to the url. We have two active routes, primary and secondary. Each can be used independently.</p>
-<div style="border: 2px solid green; padding: 1rem;">
+<p>Pay attention to the url. We have three active routes, primary and secondary. Each can be used independently.</p>
+
     <router-outlet></router-outlet>
-</div>
-<div style="border: 2px solid blue; padding: 1rem;">
+
+
 	<router-outlet name="secondary"></router-outlet>
-</div>
+
+
+	<router-outlet name="third"></router-outlet>
+
 
