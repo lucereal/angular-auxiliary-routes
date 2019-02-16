@@ -9,13 +9,13 @@ import {ObservableInput, Observable} from 'rxjs';
   template: `
   <div style="border: 2px solid yellow; padding: 1rem;">
   <router-outlet></router-outlet>
+  
    <p>
     Component three
     <button><a [routerLink]="['',{ outlets: { 'third': ['three','angular','four'] } }]">angular in three, generate four</a></button>
     <button><a [routerLink]="['',{ outlets: { 'third': ['three','angular'] } }]">delete four</a></button>
     <button><a [routerLink]="['',{ outlets: { 'third': ['three','angular','four','helloworld'] } }]">angular in three, hello world in four</a></button>
-
-
+    
   </p>
   <p>{{name}}</p>
   </div>
@@ -24,6 +24,9 @@ import {ObservableInput, Observable} from 'rxjs';
 
 // When you use children inside of your routes the parent component needs to have <router-outlet></router-outlet> inside it's html in order for the children to be loaded inside that parent. Angular Docs on Child Configuration
 // Additionally, with routed components it is not necessary to add the component selector inside the html of the parent component as they will be injected automatically by the router below your router-outlet.
+// <button><a [routerLink]="['',{ outlets: { 'third': ['three','angular'] } }]">delete four</a></button>
+// <button><a [routerLink]="['',{ outlets: { 'third': ['three','angular','four','helloworld'] } }]">angular in three, hello world in four</a></button>
+
 
 
 export class ThreeComponent implements OnInit {

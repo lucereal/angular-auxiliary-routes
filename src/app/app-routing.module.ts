@@ -36,6 +36,7 @@ const routes: Routes = [
   {
     path: 'three/:id', component: ThreeComponent,
     children: [
+      
       {path: 'four', component: FourComponent},
       { path: 'four/:id', component: FourComponent }
     ],
